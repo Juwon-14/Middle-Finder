@@ -1,0 +1,49 @@
+//Juwon Hong
+// CIS 25
+// 25/ 09/ 2024
+
+function main() {
+    while(frontIsClear()) {
+        move();
+    }
+    putBeeper();
+    turnAround();
+    while(frontIsClear()) {
+        move();
+    }
+    turnAround();
+    putBeeper();
+    moveAndHandleBeepers();
+    turnRight();
+    while(frontIsClear()) {
+        move();
+    }
+    putBeeper();
+    turnAround();
+    while(frontIsClear()) {
+        move();
+    }
+    turnAround();
+    moveAndHandleBeepers();
+}
+
+function moveAndHandleBeepers() {
+    while(frontIsClear()) {
+        move();
+        if(beepersPresent()) {
+            moveBeeper();
+        }
+    }
+    turnAround();
+    while(noBeepersPresent()) {
+        move();
+    }
+    pickBeeper();
+}
+
+function moveBeeper() {
+    pickBeeper();
+    turnAround();
+    move();
+    putBeeper();
+}
